@@ -11,7 +11,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(160, 4, 4);
+    background-image: url('../assest/fondo-pantalla-abstracto-nebulosa-ultra-detallado-4_1562-749.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .brik1 {
@@ -20,7 +22,7 @@ body {
     height: 70vh;
     display: flex;
     flex-direction: column;
-    background: rgb(22, 183, 84);
+    background: rgb(12, 15, 13);
     border-radius: 10px;
 
 }
