@@ -4,4 +4,8 @@ class Game {
        this.background = new Background (this.container);
        this.player = new Player(this.container);
     } 
-}
+
+    update() {
+        this.player.move();
+    }
+} 
