@@ -1,6 +1,7 @@
 class Game {
     constructor(container) {
        this.container = container; 
-       this.background = new Backgroung (this.container);
+       this.background = new Background (this.container);
+       this.player = new Player(this.container);
     } 
 }
