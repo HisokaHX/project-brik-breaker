@@ -31,8 +31,8 @@ class Player {
         this.x = 0;
       }
   
-      if (this.x + this.width / 2 >= this.container.offsetWidth / 2) {
-        this.x = this.container.offsetWidth / 2 - this.width / 2;
+      if (this.x + this.width >= this.container.offsetWidth) {
+        this.x = this.container.offsetWidth - this.width;
       }
   
       this.element.style.left = `${this.x}px`;
