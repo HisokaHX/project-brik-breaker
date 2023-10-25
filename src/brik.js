@@ -1,0 +1,5 @@
+class Brik {
+    constructor(container) {
+        
+    }
+}
