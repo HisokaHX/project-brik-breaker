@@ -27,22 +27,6 @@ class Player {
     this.setListeners()
   }
 
-  shoot() {
-    this.ball.push(
-      new Ball(
-        this.container,
-        this.x + this.width,
-        this.y + this.height / 2
-      )
-    );
-
-    this.canShoot = false;
-
-    setTimeout(() => {
-      this.canShoot = true;
-    }, 300);
-  }
-
   move() {
     this.x += this.vx;
 
@@ -56,8 +40,6 @@ class Player {
 
     this.element.style.left = `${this.x}px`;
 
-
-
   }
 
   setListeners() {
@@ -69,10 +51,10 @@ class Player {
         case "ArrowLeft":
           this.vx = -10;
           break;
-        case "Space":
+        /*case "Space":
           if (this.canShoot) {
             this.shoot();
-          }
+          }*/
       }
     });
 
