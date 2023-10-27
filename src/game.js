@@ -1,11 +1,12 @@
 class Game {
     constructor(container) {
-       this.container = container; 
-       this.background = new Background (this.container);
-       this.player = new Player(this.container);
+        this.container = container;
+        this.background = new Background(this.container);
+        this.player = new Player(this.container);
+        this.brik = new Brik(this.container);
 
-       this.intervalId = null;
-    } 
+        this.intervalId = null;
+    }
 
     start() {
         this.intervalId = setInterval(() => {
