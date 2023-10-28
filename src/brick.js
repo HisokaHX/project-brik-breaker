@@ -1,11 +1,11 @@
-class Brik {
-    constructor(container) {
+class Brick {
+    constructor(container, x, y) {
         this.container = container;
-        this.x = 10;
-        this.y = 300;
-        this.width = 50;
-        this.height = 100;
-        this.color = 'white';
+        this.x = x;
+        this.y = y;
+        this.width = 100;
+        this.height = 50;
+        this.color = '#00FFFB';
 
         this.element = document.createElement("div");
         this.element.style.position = "absolute";
