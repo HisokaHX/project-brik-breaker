@@ -17,7 +17,7 @@ class Ball {
     this.element.style.top = `${this.y}px`;
     this.element.style.backgroundColor = "white";
     this.element.style.borderRadius = "100px";
-    this.element.style.border = "2px solid red";
+    this.element.style.border = "2px solid white";
 
     this.container.appendChild(this.element);
 

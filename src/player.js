@@ -16,7 +16,7 @@ class Player {
     // this.element.style.background = `url(../assets/Barra2.png)`;
     // this.element.style.backgroundSize = "cover";
     // this.element.style.backgroundPosition = "bottom";
-    this.element.style.backgroundColor = "blue";
+    this.element.style.backgroundColor = "#00FF08";
 
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
