@@ -19,5 +19,6 @@ class Game {
     update() {
         this.player.move();
         this.ball.move();
+        this.ball.didCollied(this.player);
     }
 } 

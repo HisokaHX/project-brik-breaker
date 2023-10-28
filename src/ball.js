@@ -1,59 +1,80 @@
 class Ball {
-    constructor(container, x, y) {
-        this.container = container;
-        this.x = 490;
-        this.y = 600;
-        this.width = 20;
-        this.height = 20;
-        this.vx = 0;
-        this.vy = 0;
+  constructor(container, x, y) {
+    this.container = container;
+    this.x = 490;
+    this.y = 600;
+    this.width = 20;
+    this.height = 20;
+    this.vx = 0;
+    this.vy = 0;
 
-        this.element = document.createElement("div");
-        this.element.style.position = "absolute";
+    this.element = document.createElement("div");
+    this.element.style.position = "absolute";
 
-        this.element.style.width = `${this.width}px`;
-        this.element.style.height = `${this.height}px`;
-        this.element.style.left = `${this.x}px`;
-        this.element.style.top = `${this.y}px`;
-        this.element.style.backgroundColor = "white";
-        this.element.style.borderRadius = "100px";
+    this.element.style.width = `${this.width}px`;
+    this.element.style.height = `${this.height}px`;
+    this.element.style.left = `${this.x}px`;
+    this.element.style.top = `${this.y}px`;
+    this.element.style.backgroundColor = "white";
+    this.element.style.borderRadius = "100px";
+    this.element.style.border = "2px solid red";
 
-        this.container.appendChild(this.element);
+    this.container.appendChild(this.element);
 
-        this.setListeners();
+    this.setListeners();
+
+    this.keepAlive = true;
+  }
+
+  move() {
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if (this.x <= 0 || this.x + this.width >= this.container.offsetWidth) {
+      this.vx = -this.vx;
     }
 
+    if (this.y <= 0) {
+      this.vy = -this.vy;
+    }
 
-    move() {
-        
-        this.x += this.vx;
-        this.y += this.vy; 
+    if (this.y + this.height >= this.container.offsetHeight) {
+      console.log("game over");
+    }
 
-        if (this.x <= 0 || this.x + this.width >= this.container.offsetWidth) {
+    this.element.style.left = `${this.x}px`;
+    this.element.style.top = `${this.y}px`;
+  }
+
+  didCollied(player) {
+    const ballRect = this.element.getBoundingClientRect();
+    const playerRect = player.element.getBoundingClientRect();
+
+    if (playerRect.top < ballRect.bottom) {
+      if (
+        playerRect.left < ballRect.right &&
+        playerRect.right > ballRect.left &&
+        this.keepAlive
+      ) {
+        this.y = 600;
+        this.vy = -this.vy;
+        if (player.vx < 0 && this.vx > 0 || player.vx > 0 && this.vx < 0) {
             this.vx = -this.vx;
         }
-
-        if (this.y <= 0 || this.y + this.height >= this.container.offsetHeight) {
-            this.vy = -this.vy;
-        }
-
-        this.element.style.left = `${this.x}px`;
-        this.element.style.top = `${this.y}px`;
-    } 
-
-    didCollied() {
-
+      } else {
+        this.keepAlive = false;
+      }
     }
+  }
 
-    setListeners () {
-        window.addEventListener("keydown", (e) => {
-            switch (e.code) {
-              case "Space":
-                this.vy = -10;
-                this.vx = 10;
-                break;
-            }
-        })
-
-    }
+  setListeners() {
+    window.addEventListener("keydown", (e) => {
+      switch (e.code) {
+        case "Space":
+          this.vy = -10;
+          this.vx = 10;
+          break;
+      }
+    });
+  }
 }

@@ -2,9 +2,9 @@ class Player {
   constructor(container) {
     this.container = container;
     this.width = 200;
-    this.height = 80;
+    this.height = 40;
     this.x = 400;
-    this.y = 600;
+    this.y = 625;
     this.vx = 0;
     this.ball = 0;
     this.canShoot = true;
@@ -13,9 +13,10 @@ class Player {
     this.element = document.createElement("div");
     this.element.style.position = "absolute";
 
-    this.element.style.background = `url(../assets/Barra2.png)`;
-    this.element.style.backgroundSize = "cover";
-    this.element.style.backgroundPosition = "bottom";
+    // this.element.style.background = `url(../assets/Barra2.png)`;
+    // this.element.style.backgroundSize = "cover";
+    // this.element.style.backgroundPosition = "bottom";
+    this.element.style.backgroundColor = "blue";
 
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
