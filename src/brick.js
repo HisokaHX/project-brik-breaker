@@ -1,10 +1,10 @@
 class Brick {
-    constructor(container, x, y) {
+    constructor(container, x, y, width, height) {
         this.container = container;
         this.x = x;
         this.y = y;
-        this.width = 100;
-        this.height = 50;
+        this.width = width;
+        this.height = height;
         this.color = '#00FFFB';
 
         this.element = document.createElement("div");
@@ -14,6 +14,7 @@ class Brick {
         this.element.style.height = `${this.height}px`;
         this.element.style.left = `${this.x}px`;
         this.element.style.top = `${this.y}px`;
+        this.element.classList.add("brick");
         this.element.style.backgroundColor = this.color;
 
         this.container.appendChild(this.element);

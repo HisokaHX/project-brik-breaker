@@ -60,6 +60,15 @@ h4 {
     padding: 10px;
 }
 
+.brick {
+    border-radius: 2px;
+    background-color: #00FFFB;
+}
+
+.red {
+    background-color: red;
+}
+
 
 
 
