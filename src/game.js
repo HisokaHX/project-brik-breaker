@@ -5,6 +5,7 @@ class Game {
         this.player = new Player(this.container);
         this.ball = new Ball(this.container);
         this.bricks = [];
+        this.score = new Score(this.container);
 
         this.intervalId = null;
 
@@ -29,7 +30,7 @@ class Game {
         const padding = 37;
 
         let xOffset = padding;
-        let yOffset = padding;  
+        let yOffset = padding;
 
         new Array(rowCount).fill("").forEach(() => {
             new Array(colCount).fill("").forEach(() => {
@@ -49,7 +50,8 @@ class Game {
 
         this.bricks.forEach((brick) => {
             if (brick.isColliding(this.ball)) {
-                this.ball.vy *= -1
+                this.ball.vy *= -1;
+                this.score.scorePoints(1);
                 this.bricks = this.bricks.filter(block => block !== brick)
                 brick.element.remove()
             };
@@ -67,7 +69,7 @@ class Game {
             console.log("do something!");
             const bricks = this.container.querySelectorAll(".brick");
             for (let brick of bricks) {
-                brick.style.backgroundColor = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+                brick.style.backgroundColor = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
             }
         }
     }
