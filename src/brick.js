@@ -20,4 +20,15 @@ class Brick {
         this.container.appendChild(this.element);
 
     }
-}
+
+    isColliding(ball) {
+        return (
+          ball.x + ball.width > this.x &&
+          ball.x - ball.width < this.x + this.width &&
+          ball.y + ball.height > this.y &&
+          ball.y - ball.height < this.y + this.height
+        );
+      }
+} 
+
+

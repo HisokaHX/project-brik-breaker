@@ -65,15 +65,22 @@ class Ball {
         this.keepAlive = false;
       }
     }
-  }
+  } 
+
 
   setListeners() {
     window.addEventListener("keydown", (e) => {
       switch (e.code) {
         case "Space":
-          this.vy = -10;
-          this.vx = 10;
-          break;
+          /*this.vy = -10;
+          this.vx = 10;*/
+          
+          /*this.vx = (Math.random() * 10) - 5;
+          this.vy = (Math.random() * 10) - 5;*/
+          const randomAngle = (Math.random() * 2/4 * Math.PI) + Math.PI/4;
+          this.vx = Math.cos(randomAngle) * 10;
+          this.vy = Math.sin(randomAngle) * 10;
+        break;
       }
     });
   }

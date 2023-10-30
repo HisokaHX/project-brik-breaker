@@ -47,6 +47,15 @@ class Game {
         this.ball.move();
         this.ball.didCollied(this.player);
 
+        this.bricks.forEach((brick) => {
+            if (brick.isColliding(this.ball)) {
+                this.ball.vy *= -1
+                this.bricks = this.bricks.filter(block => block !== brick)
+                brick.element.remove()
+            };
+        })
+
+
         // if (this.tick === 200) {
         //     const bricks = this.container.querySelectorAll(".brick");
         //     for (let brick of bricks) {
