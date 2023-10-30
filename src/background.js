@@ -7,7 +7,7 @@ class Background {
     
         this.element = document.createElement("div");
         this.element.style.position = "absolute";
-        this.element.style.background = `url(../assets/board-game.jpg)`;
+        this.element.style.background = `url(../assets/New_BackGround.jpeg)`;
         this.element.style.backgroundSize = "cover";
         this.element.style.backgroundPosition = "bottom";
         this.element.style.width = `${this.width}px`;

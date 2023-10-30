@@ -4,7 +4,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../assets/fondo-pantalla-abstracto-nebulosa-ultra-detallado-4_1562-749.jpg);
+    background-image: url(../assets/space-back-ground.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -23,7 +23,7 @@ h4 {
     overflow: hidden;
     width: 1000px;
     height: 700px;
-    background-image: url(../assets/board-game.jpg);
+    background-image: url(../assets/New_BackGround.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -32,7 +32,7 @@ h4 {
 #intro-game {
     width: 1000px;
     height: 700px;
-    background-image: url(../assets/board-game.jpg);
+    background-image: url(../assets/New_BackGround.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
