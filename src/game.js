@@ -23,10 +23,10 @@ class Game {
     }
 
     createBrick() {
-        const rowCount = 4;
+        const rowCount = 5;
         const colCount = 7;
         const brickWidth = 100;
-        const brickHeight = 40;
+        const brickHeight = 35;
         const padding = 37;
 
         let xOffset = padding;
@@ -42,6 +42,39 @@ class Game {
             yOffset += brickHeight + padding;
         })
     }
+
+    win() {
+        const winBoard = document.getElementById("win-board");
+        winBoard.style.display = "flex";
+
+        clearInterval(this.intervalId);
+    }
+
+
+
+    gameOver() {
+        const gameOverBoard = document.getElementById("game-over-board");
+        gameOverBoard.style.display = "flex";
+
+
+
+        clearInterval(this.intervalId);
+    }
+
+    /*iamDead() {
+        if (this.ball.y + this.ball.height >= this.container.offsetHeight) {
+            console.log("la bola salio");
+            this.ball.x = 490;
+            this.ball.y = 600;
+            this.ball.vx = 0;
+            this.ball.vy = 0;
+            this.player.x = 400;
+        }
+
+        if (this.player.lives === 0) {
+            this.gameOver();
+        }
+    }*/
 
     update() {
         this.player.move();
@@ -71,6 +104,24 @@ class Game {
             for (let brick of bricks) {
                 brick.style.backgroundColor = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
             }
+        }
+
+        if (this.bricks.length === 0) {
+            this.win();
+        }
+
+        if (this.ball.y + this.ball.height >= this.container.offsetHeight) {
+            console.log("la bola salio");
+            this.ball.x = 490;
+            this.ball.y = 600;
+            this.ball.vx = 0;
+            this.ball.vy = 0;
+            this.player.x = 400;
+            this.player.lives -= 1;
+        }
+
+        if (this.player.lives === 0) {
+            this.gameOver();
         }
     }
 } 

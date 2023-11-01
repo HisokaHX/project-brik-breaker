@@ -9,6 +9,7 @@ class Player {
     this.ball = 0;
     this.canShoot = true;
     this.animationTick = 0;
+    this.lives = 3;
 
     this.element = document.createElement("div");
     this.element.style.position = "absolute";
