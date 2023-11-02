@@ -61,7 +61,7 @@ class Game {
         clearInterval(this.intervalId);
     }
 
-    /*iamDead() {
+    iamDead() {
         if (this.ball.y + this.ball.height >= this.container.offsetHeight) {
             console.log("la bola salio");
             this.ball.x = 490;
@@ -69,12 +69,14 @@ class Game {
             this.ball.vx = 0;
             this.ball.vy = 0;
             this.player.x = 400;
+            this.player.lives -= 1;
+            this.ball.canStart = true;
         }
 
         if (this.player.lives === 0) {
             this.gameOver();
         }
-    }*/
+    }
 
     update() {
         this.player.move();
@@ -110,18 +112,7 @@ class Game {
             this.win();
         }
 
-        if (this.ball.y + this.ball.height >= this.container.offsetHeight) {
-            console.log("la bola salio");
-            this.ball.x = 490;
-            this.ball.y = 600;
-            this.ball.vx = 0;
-            this.ball.vy = 0;
-            this.player.x = 400;
-            this.player.lives -= 1;
-        }
-
-        if (this.player.lives === 0) {
-            this.gameOver();
-        }
+        this.iamDead()
     }
+
 } 
