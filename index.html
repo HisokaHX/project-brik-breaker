@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brick Breaker Game</title>
     <link rel="stylesheet" href="./styles/index.css">
+    <style>
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -13,8 +24,8 @@
     </div>
 
     <div id="intro-game">
-        <button id="intro-game-btn"><img id="title" src="./assets/title-juego.png" alt="title"></button>
-        <h1>Press title for start the game</h1>
+        <button id="intro-game-btn" class="blink"><img id="title" src="./assets/title-juego.png" alt="title"></button>
+        <h1 class="blink">^ Press title for start the game ^</h1>
     </div>
 
     <div id="game-over-board">
@@ -22,7 +33,6 @@
     </div>
 
     <div id="win-board">
-        <h1>YOU WIN!</h1>
         <button class="btn-restart">RESTART</button>
     </div>
     <!--<div class="brik-breaker">

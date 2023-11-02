@@ -13,9 +13,11 @@ class Score {
         this.element = document.createElement("div");
         this.element.id = "score";
 
+
         this.scoreTextEl = document.createElement("h2");
         this.scoreTextEl.id = "score-text";
         this.scoreTextEl.textContent = `Score : ${this.bricks}`;
+
 
         this.energyContainer = document.createElement("div");
         this.energyContainer.id = "energy-container";

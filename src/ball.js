@@ -30,7 +30,7 @@ class Ball {
   }
 
   move() {
-    this.x += this.vx /* this.speedModifier*/; 
+    this.x += this.vx /* this.speedModifier*/;
     this.y += this.vy /* this.speedModifier*/;
 
     if (this.x <= 0 || this.x + this.width >= this.container.offsetWidth) {
@@ -40,11 +40,11 @@ class Ball {
     if (this.y <= 0) {
       this.vy = -this.vy;
     }
-    
+
     if (this.y + this.height >= this.container.offsetHeight) {
       console.log("game over");
     }
-    
+
     this.element.style.left = `${this.x}px`;
     this.element.style.top = `${this.y}px`;
   }
@@ -77,18 +77,16 @@ class Ball {
       switch (e.code) {
         case "Space":
           if (this.canStart) {
-            /*this.vy = -10;
-            this.vx = 10;*/
-  
-            /*this.vx = (Math.random() * 10) - 5;
-            this.vy = (Math.random() * 10) - 5;*/
-            const randomAngle = (Math.random() * 2 / 4 * Math.PI) + Math.PI / 4;
+            const minAngle = Math.PI / 4;
+            const maxAngle = 3 * Math.PI / 4;
+            let randomAngle;
+            do {
+              randomAngle = Math.random() * (maxAngle - minAngle) + minAngle;
+            } while (Math.abs(Math.sin(randomAngle) - Math.sin(minAngle)) < 0.1);
             this.vx = Math.cos(randomAngle) * 10;
-            this.vy = Math.abs(Math.sin(randomAngle) * 10) * -1;
-  
-            this.keepAlive = true
-            this.canStart = false
-            break;
+            this.vy = Math.sin(randomAngle) * 10;
+            this.keepAlive = true;
+            this.canStart = false;
           }
       }
     });

@@ -18,6 +18,7 @@ class Player {
     // this.element.style.backgroundSize = "cover";
     // this.element.style.backgroundPosition = "bottom";
     this.element.style.backgroundColor = "#00FF08";
+    this.element.style.borderRadius = "5px";
 
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;

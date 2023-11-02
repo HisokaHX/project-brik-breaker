@@ -23,14 +23,14 @@ class Game {
     }
 
     createBrick() {
-        const rowCount = 5;
+        const rowCount = 4;
         const colCount = 7;
         const brickWidth = 100;
         const brickHeight = 35;
-        const padding = 37;
+        const padding = 38;
 
         let xOffset = padding;
-        let yOffset = padding;
+        let yOffset = padding + 50;
 
         new Array(rowCount).fill("").forEach(() => {
             new Array(colCount).fill("").forEach(() => {
@@ -78,6 +78,14 @@ class Game {
         }
     }
 
+    getCrazy() {
+        if (this.score.bricks % 10 === 0 && this.score.bricks > 0) {
+            this.ball.vx = this.ball.vx * 1.01;
+            this.ball.vy = this.ball.vy * 1.01;
+            this.player.vx = this.player.vx * 1.01;
+        }
+    }
+
     update() {
         this.player.move();
         this.ball.move();
@@ -113,6 +121,8 @@ class Game {
         }
 
         this.iamDead()
+
+        this.getCrazy()
     }
 
 } 
