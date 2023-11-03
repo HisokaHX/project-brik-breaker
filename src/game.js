@@ -7,12 +7,16 @@ class Game {
         this.bricks = [];
         this.score = new Score(this.container, this.player.lives);
 
+        this.backgroundMusic = document.getElementById("hero");
+
         this.intervalId = null;
 
         this.tick = 0;
     }
 
     start() {
+        this.backgroundMusic.play();
+
         this.intervalId = setInterval(() => {
             this.update();
 
@@ -46,6 +50,7 @@ class Game {
     win() {
         const winBoard = document.getElementById("win-board"); 
         const theChampion = document.getElementById("champion");
+        this.backgroundMusic.pause();
         theChampion.play();
         winBoard.style.display = "flex";
 
@@ -56,6 +61,9 @@ class Game {
 
     gameOver() {
         const gameOverBoard = document.getElementById("game-over-board");
+        const theLoser = document.getElementById("loser");
+        this.backgroundMusic.pause();
+        theLoser.play()
         gameOverBoard.style.display = "flex";
 
 
