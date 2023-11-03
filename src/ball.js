@@ -25,13 +25,11 @@ class Ball {
 
     this.keepAlive = true;
     this.canStart = true;
-
-    /*this.speedModifier = 1*/;
   }
 
   move() {
-    this.x += this.vx /* this.speedModifier*/;
-    this.y += this.vy /* this.speedModifier*/;
+    this.x += this.vx; 
+    this.y += this.vy;
 
     if (this.x <= 0 || this.x + this.width >= this.container.offsetWidth) {
       this.vx = -this.vx;

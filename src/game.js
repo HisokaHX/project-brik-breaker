@@ -44,7 +44,9 @@ class Game {
     }
 
     win() {
-        const winBoard = document.getElementById("win-board");
+        const winBoard = document.getElementById("win-board"); 
+        const theChampion = document.getElementById("champion");
+        theChampion.play();
         winBoard.style.display = "flex";
 
         clearInterval(this.intervalId);
@@ -62,6 +64,8 @@ class Game {
     }
 
     iamDead() {
+        const energysNodes = this.score.element.getElementsByTagName("img"); 
+
         if (this.ball.y + this.ball.height >= this.container.offsetHeight) {
             console.log("la bola salio");
             this.ball.x = 490;
@@ -71,7 +75,9 @@ class Game {
             this.player.x = 400;
             this.player.lives -= 1;
             this.ball.canStart = true;
-            this.updatesEnergy();
+            const lastEnergy = energysNodes [energysNodes.length - 1];
+            lastEnergy.remove(); 
+            
         }
 
         if (this.player.lives === 0) {
@@ -101,13 +107,6 @@ class Game {
             };
         })
 
-
-        // if (this.tick === 200) {
-        //     const bricks = this.container.querySelectorAll(".brick");
-        //     for (let brick of bricks) {
-        //         brick.classList.add("red");
-        //     }
-        // }
 
         if (this.tick % 20 === 0) {
             console.log("do something!");

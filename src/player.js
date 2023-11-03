@@ -14,9 +14,6 @@ class Player {
     this.element = document.createElement("div");
     this.element.style.position = "absolute";
 
-    // this.element.style.background = `url(../assets/Barra2.png)`;
-    // this.element.style.backgroundSize = "cover";
-    // this.element.style.backgroundPosition = "bottom";
     this.element.style.backgroundColor = "#00FF08";
     this.element.style.borderRadius = "5px";
 
@@ -27,7 +24,7 @@ class Player {
 
     this.container.appendChild(this.element);
 
-    this.setListeners()
+    this.setListeners();
   }
 
   move() {
@@ -42,7 +39,6 @@ class Player {
     }
 
     this.element.style.left = `${this.x}px`;
-
   }
 
   setListeners() {
@@ -50,14 +46,10 @@ class Player {
       switch (e.code) {
         case "ArrowRight":
           this.vx = 10;
-          break;
+        break;
         case "ArrowLeft":
           this.vx = -10;
-          break;
-        /*case "Space":
-          if (this.canShoot) {
-            this.shoot();
-          }*/
+        break;
       }
     });
 
@@ -66,10 +58,8 @@ class Player {
         case "ArrowRight":
         case "ArrowLeft":
           this.vx = 0;
-          break;
+        break;
       }
-    })
+    });
   }
-
 }
-
