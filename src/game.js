@@ -5,7 +5,7 @@ class Game {
         this.player = new Player(this.container);
         this.ball = new Ball(this.container);
         this.bricks = [];
-        this.score = new Score(this.container);
+        this.score = new Score(this.container, this.player.lives);
 
         this.intervalId = null;
 
@@ -71,6 +71,7 @@ class Game {
             this.player.x = 400;
             this.player.lives -= 1;
             this.ball.canStart = true;
+            this.updatesEnergy();
         }
 
         if (this.player.lives === 0) {

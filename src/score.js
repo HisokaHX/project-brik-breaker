@@ -19,20 +19,21 @@ class Score {
         this.scoreTextEl.textContent = `Score : ${this.bricks}`;
 
 
-        this.energyContainer = document.createElement("div");
-        this.energyContainer.id = "energy-container";
+        this.energysContainer = document.createElement("div");
+        this.energysContainer.id = "energys-container";
 
         new Array(this.lifes).fill("").forEach((_) => {
             const energy = document.createElement("img");
-            energy.src = "./assets/image.png";
+            energy.src = `./assets/image.png`;
             energy.style.width = "30px";
             energy.style.height = "30px";
 
-            this.energyContainer.appendChild(energy);
+            this.energysContainer.appendChild(energy);
         });
 
+
         this.element.appendChild(this.scoreTextEl);
-        this.element.appendChild(this.energyContainer);
+        this.element.appendChild(this.energysContainer);
 
         this.element.style.position = "absolute";
 
@@ -46,10 +47,17 @@ class Score {
 
     }
 
+
     scorePoints(points) {
         this.bricks += points;
 
         const scoreText = document.getElementById("score-text");
         scoreText.textContent = `Score: ${this.bricks}`;
+    }
+
+    updatesEnergy() {
+        const energysNodes = this.element.getElementsByTagName("img");
+        const lastEnergy = energysNodes[energysNodes.length - 1];
+        return lastEnergy.remove();
     }
 }
