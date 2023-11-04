@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brick Breaker Game</title>
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="icon" href="./assets/Letra B.png">
     <style>
         .blink {
+            animation: blinker 2s linear infinite;
+        }
+
+        .btn-restart {
             animation: blinker 2s linear infinite;
         }
 
@@ -33,11 +38,11 @@
         <audio id="loser" loop>
             <source src="./assets/lose.mp3" type="audio/mp3">
             Your browser does not support the audio tag.
-          </audio>
+        </audio>
     </div>
 
     <div id="win-board">
-        <button class="btn-restart">RESTART</button> 
+        <button class="btn-restart">RESTART</button>
         <audio id="champion">
             <source src="./assets/Queen-We-are-the-champions.mp3" type="audio/mp3">
             Your browser does not support the audio tag.
@@ -46,7 +51,7 @@
     <audio id="hero" loop>
         <source src="./assets/Holding-Out-for-a-Hero.mp3" type="audio/mp3">
         Your browser does not support the audio tag.
-      </audio>
+    </audio>
     <!--<div class="brik-breaker">
         <img src="/assest/fondo-pantalla-abstracto-nebulosa-ultra-detallado-4_1562-749.jpg" alt="space">
     </div>
@@ -60,8 +65,8 @@
                 <h1>BRIK BREAKER</h1>
             </div>
         </div>
-    </div>--> 
-    
+    </div>-->
+
 
     <script src="./src/score.js"></script>
     <script src="./src/brick.js"></script>

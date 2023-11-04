@@ -48,7 +48,7 @@ class Game {
     }
 
     win() {
-        const winBoard = document.getElementById("win-board"); 
+        const winBoard = document.getElementById("win-board");
         const theChampion = document.getElementById("champion");
         this.backgroundMusic.pause();
         theChampion.play();
@@ -72,7 +72,7 @@ class Game {
     }
 
     iamDead() {
-        const energysNodes = this.score.element.getElementsByTagName("img"); 
+        const energysNodes = this.score.element.getElementsByTagName("img");
 
         if (this.ball.y + this.ball.height >= this.container.offsetHeight) {
             console.log("la bola salio");
@@ -83,14 +83,20 @@ class Game {
             this.player.x = 400;
             this.player.lives -= 1;
             this.ball.canStart = true;
-            const lastEnergy = energysNodes [energysNodes.length - 1];
-            lastEnergy.remove(); 
-            
+            console.log(energysNodes);
+            const lastEnergy = energysNodes[energysNodes.length - 1];
+            lastEnergy.remove();
+
         }
 
         if (this.player.lives === 0) {
+            this.setHighScore()
             this.gameOver();
         }
+    }
+
+    setHighScore() {
+        localStorage.setItem("highScore", this.score.highScore);
     }
 
     getCrazy() {

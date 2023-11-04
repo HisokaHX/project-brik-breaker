@@ -15,7 +15,7 @@ class Player {
     this.element.style.position = "absolute";
 
     this.element.style.backgroundColor = "#00FF08";
-    this.element.style.borderRadius = "5px";
+    this.element.style.borderRadius = "50px";
 
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -46,10 +46,10 @@ class Player {
       switch (e.code) {
         case "ArrowRight":
           this.vx = 10;
-        break;
+          break;
         case "ArrowLeft":
           this.vx = -10;
-        break;
+          break;
       }
     });
 
@@ -58,7 +58,7 @@ class Player {
         case "ArrowRight":
         case "ArrowLeft":
           this.vx = 0;
-        break;
+          break;
       }
     });
   }
