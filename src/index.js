@@ -5,7 +5,6 @@ window.addEventListener("load", () => {
   const restartBtns = document.querySelectorAll(".btn-restart");
 
   restartBtns.forEach((button) => {
-    console.log(button);
     button.addEventListener("click", () => {
       window.location.reload();
     });

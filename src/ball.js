@@ -28,7 +28,7 @@ class Ball {
   }
 
   move() {
-    this.x += this.vx; 
+    this.x += this.vx;
     this.y += this.vy;
 
     if (this.x <= 0 || this.x + this.width >= this.container.offsetWidth) {
@@ -80,7 +80,7 @@ class Ball {
             let randomAngle;
             do {
               randomAngle = Math.random() * (maxAngle - minAngle) + minAngle;
-            } while (Math.abs(Math.sin(randomAngle) - Math.sin(minAngle)) < 0.1);
+            } while (Math.abs(Math.sin(randomAngle) - Math.sin(minAngle)) < 0.2);
             this.vx = Math.cos(randomAngle) * 10;
             this.vy = Math.sin(randomAngle) * 10;
             this.keepAlive = true;

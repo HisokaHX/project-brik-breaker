@@ -27,6 +27,7 @@ h4 {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #intro-game {
@@ -74,6 +75,7 @@ h4 {
     justify-content: center;
     flex-direction: column;
     display: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #win-board {
@@ -92,7 +94,7 @@ h4 {
     justify-content: center;
     flex-direction: column;
     display: none;
-    font-family: "Courier New", Courier, monospace;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: yellowgreen;
     font-size: 40px;
 }
@@ -137,6 +139,46 @@ h4 {
 .blink {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: small;
+}
+
+#score-game-over {
+    color: white;
+    width: 1000px;
+    font-size: 40px;
+    position: absolute;
+    margin-bottom: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+#high-score-game-over {
+    color: white;
+    width: 1000px;
+    font-size: 40px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 425px;
+}
+
+#score-game-win {
+    color: white;
+    width: 1000px;
+    font-size: 40px;
+    position: absolute;
+    margin-bottom: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+#high-score-game-win {
+    color: white;
+    width: 1000px;
+    font-size: 40px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 525px;
 }
 
 

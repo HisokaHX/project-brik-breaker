@@ -27,7 +27,7 @@ class Game {
     }
 
     createBrick() {
-        const rowCount = 4;
+        const rowCount = 5;
         const colCount = 7;
         const brickWidth = 100;
         const brickHeight = 35;
@@ -53,6 +53,8 @@ class Game {
         this.backgroundMusic.pause();
         theChampion.play();
         winBoard.style.display = "flex";
+        document.getElementById("score-game-win").textContent = `Score: ${this.score.bricks}`;
+        document.getElementById("high-score-game-win").textContent = `High Score: ${this.score.highScore}`;
 
         clearInterval(this.intervalId);
     }
@@ -65,8 +67,8 @@ class Game {
         this.backgroundMusic.pause();
         theLoser.play()
         gameOverBoard.style.display = "flex";
-
-
+        document.getElementById("score-game-over").textContent = `Score: ${this.score.bricks}`;
+        document.getElementById("high-score-game-over").textContent = `High Score: ${this.score.highScore}`;
 
         clearInterval(this.intervalId);
     }
@@ -137,6 +139,8 @@ class Game {
         this.iamDead()
 
         this.getCrazy()
+
+        this.setHighScore()
     }
 
 } 
