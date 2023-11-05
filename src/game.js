@@ -77,7 +77,6 @@ class Game {
         const energysNodes = this.score.element.getElementsByTagName("img");
 
         if (this.ball.y + this.ball.height >= this.container.offsetHeight) {
-            console.log("la bola salio");
             this.ball.x = 490;
             this.ball.y = 600;
             this.ball.vx = 0;
@@ -85,7 +84,6 @@ class Game {
             this.player.x = 400;
             this.player.lives -= 1;
             this.ball.canStart = true;
-            console.log(energysNodes);
             const lastEnergy = energysNodes[energysNodes.length - 1];
             lastEnergy.remove();
 
@@ -125,7 +123,6 @@ class Game {
 
 
         if (this.tick % 20 === 0) {
-            console.log("do something!");
             const bricks = this.container.querySelectorAll(".brick");
             for (let brick of bricks) {
                 brick.style.backgroundColor = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');

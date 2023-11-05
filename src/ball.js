@@ -39,10 +39,6 @@ class Ball {
       this.vy = -this.vy;
     }
 
-    if (this.y + this.height >= this.container.offsetHeight) {
-      console.log("game over");
-    }
-
     this.element.style.left = `${this.x}px`;
     this.element.style.top = `${this.y}px`;
   }
